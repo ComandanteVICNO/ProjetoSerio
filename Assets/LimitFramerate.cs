@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LimitFramerate : MonoBehaviour
 {
-    private int refreshRate = 60;
+    private int refreshRate = 120;
 
     public float updateInterval = 0.5f; // How often to update the FPS value.
     private float lastInterval;
@@ -16,7 +16,7 @@ public class LimitFramerate : MonoBehaviour
     private void Start()
     {
         Application.targetFrameRate = refreshRate;
-
+        QualitySettings.vSyncCount = 0;
         lastInterval = Time.realtimeSinceStartup;
         frames = 0;
     }
