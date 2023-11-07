@@ -11,7 +11,7 @@ public class DragAndDrop : MonoBehaviour
     private Vector3 curScreenPos;
 
     Camera camera;
-    private bool isDragging;
+    public bool isDragging;
 
     private Vector3 WorldPos
     {
