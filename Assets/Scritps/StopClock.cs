@@ -8,6 +8,7 @@ public class StopClock : MonoBehaviour
 {
     public ScoreManager scoreManager;
     public float stopTime;
+    public bool canStop;
 
     private void Start()
     {
@@ -17,7 +18,11 @@ public class StopClock : MonoBehaviour
     {
         scoreManager = FindObjectOfType<ScoreManager>();
         scoreManager.clockStopTime = stopTime;
-        scoreManager.Invoke("StopClockActivate", 0f);
+        if (canStop)
+        {
+            scoreManager.Invoke("StopClockActivate", 0f);
+        }
+        
     }
 
     
