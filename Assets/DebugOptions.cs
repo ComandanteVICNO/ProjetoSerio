@@ -8,11 +8,13 @@ public class DebugOptions : MonoBehaviour
     public GameObject plasticObject;
     public GameObject glassObject;
     public GameObject batteryObject;
+    public GameObject metalObject;
 
     public Transform paperTransform;
     public Transform plasticTransform;
     public Transform batteryTransform;
     public Transform glassTransform;
+    public Transform metalTransform;
 
     public float spawnCheckRadius = 0.5f; // Adjust the radius as needed
 
@@ -45,6 +47,14 @@ public class DebugOptions : MonoBehaviour
         if (!IsOccupied(glassTransform.position))
         {
             Instantiate(glassObject, glassTransform.position, Quaternion.identity);
+        }
+    }
+
+    public void SpawnMetal()
+    {
+        if (!IsOccupied(metalTransform.position))
+        {
+            Instantiate(metalObject, metalTransform.position, Quaternion.identity);
         }
     }
 

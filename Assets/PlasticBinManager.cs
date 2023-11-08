@@ -6,7 +6,7 @@ public class PlasticBinManager : MonoBehaviour
 {
     public ScoreManager scoreManager;
     public DragAndDrop dragNDrop;
-
+    StopClock stopClock;
 
 
     private void OnTriggerStay(Collider other)
@@ -19,6 +19,7 @@ public class PlasticBinManager : MonoBehaviour
         {
             if (other.CompareTag("Plastic") || other.CompareTag("Metal"))
             {
+              
                 scoreManager.IncreaseScore();
                 Object.Destroy(other.gameObject);
             }
@@ -33,5 +34,6 @@ public class PlasticBinManager : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         dragNDrop = null;
+        stopClock = null;
     }
 }
