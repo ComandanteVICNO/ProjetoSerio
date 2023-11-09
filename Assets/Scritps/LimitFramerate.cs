@@ -11,7 +11,6 @@ public class LimitFramerate : MonoBehaviour
     private float lastInterval;
     private int frames = 0;
     private float fps;
-    public TMP_Text fpsText;
     
     private void Start()
     {
@@ -33,6 +32,5 @@ public class LimitFramerate : MonoBehaviour
             lastInterval = timeNow;
         }
 
-        fpsText.text = "FPS: " + fps;
     }
 }

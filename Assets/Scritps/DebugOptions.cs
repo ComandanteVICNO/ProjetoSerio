@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class DebugOptions : MonoBehaviour
 {
-    public GameObject paperObject;
     public GameObject plasticObject;
-    public GameObject glassObject;
     public GameObject batteryObject;
     public GameObject metalObject;
+
+    [Header("GameObject Array")]
+    public GameObject[] paperObjects;
+    public GameObject[] glassObjects;
 
     public Transform paperTransform;
     public Transform plasticTransform;
@@ -22,7 +24,10 @@ public class DebugOptions : MonoBehaviour
     {
         if (!IsOccupied(paperTransform.position))
         {
-            Instantiate(paperObject, paperTransform.position, Quaternion.identity);
+            int index = Random.Range(0, paperObjects.Length);
+
+            Instantiate(paperObjects[index], paperTransform.position, Quaternion.identity);
+            
         }
     }
 
@@ -46,7 +51,9 @@ public class DebugOptions : MonoBehaviour
     {
         if (!IsOccupied(glassTransform.position))
         {
-            Instantiate(glassObject, glassTransform.position, Quaternion.identity);
+            int index = Random.Range(0, paperObjects.Length);
+
+            Instantiate(glassObjects[index], glassTransform.position, Quaternion.identity);
         }
     }
 
