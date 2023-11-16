@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
     private float clockPausedTime;
     private int clockPauseTimes;
     public float maxTime;
-    private float newElapsedTime;
+    public float newElapsedTime;
 
     [Header("Bool Checks")]
     public bool isTimerRunning = true;
