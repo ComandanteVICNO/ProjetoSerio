@@ -9,10 +9,12 @@ public class ScoreManager : MonoBehaviour
 {
     [Header("References")]
     public TMP_Text scoreText;
+    public TMP_Text highScoreText;
     public TMP_Text timerText;
     public TMP_Text gameoverScoreText;
     public GameObject gameUI;
     public GameObject gameOverUI;
+    public VibrationManager vibrationManager;
 
     [Header("TimeValues")]
     private float startTime;
@@ -26,12 +28,18 @@ public class ScoreManager : MonoBehaviour
     public bool isTimerRunning = true;
 
     int score;
-
+    int highScore;
+    private void Awake()
+    {
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
+    }
     private void Start()
     {
+        vibrationManager = FindAnyObjectByType<VibrationManager>();
         score = 0;
         gameUI.SetActive(true);
         gameOverUI.SetActive(false);
+        highScoreText.text = "Highscore: " + highScore; 
 
     }
 
@@ -46,13 +54,16 @@ public class ScoreManager : MonoBehaviour
     public void IncreaseScore()
     {
         score += 1;
+        vibrationManager.Vibrate(vibrationManager.correctVibrationTime);
     }
 
     public void DecreaseScore()
     {
+        vibrationManager.WrongVibrate();
         if (score == 0) return;
         else
         {
+            
             score -= 1;
         }
     }
@@ -98,6 +109,11 @@ public class ScoreManager : MonoBehaviour
     {
         gameUI.SetActive(false);
         gameOverUI.SetActive(true);
+        if (score > highScore)
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            PlayerPrefs.Save();
+        }
         Time.timeScale = 0f;
         
 
@@ -105,7 +121,9 @@ public class ScoreManager : MonoBehaviour
 
     public void RestartGame()
     {
+        
         SceneManager.LoadScene("GameScene");
+        
     }
     #endregion
 }

@@ -18,6 +18,7 @@ public class LimitFramerate : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         lastInterval = Time.realtimeSinceStartup;
         frames = 0;
+        Time.timeScale = 1f;
     }
 
     private void Update()

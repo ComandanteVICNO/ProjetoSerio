@@ -7,7 +7,11 @@ public class GlassBinManager : MonoBehaviour
     public ScoreManager scoreManager;
     public DragAndDrop dragNDrop;
 
-
+    private void Start()
+    {
+        scoreManager = FindFirstObjectByType<ScoreManager>();
+        dragNDrop = FindAnyObjectByType<DragAndDrop>();
+    }
 
     private void OnTriggerStay(Collider other)
     {

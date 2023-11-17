@@ -13,7 +13,7 @@ public class SpawnObjects : MonoBehaviour
     public GameObject[] glassObjects;
     public GameObject[] plasticAndMetalObjects;
     GameObject objectToSpawn;
-    private string selectedCategory;
+    private int selectedCategory;
 
     [Header("Spawn Points")]
     public Transform[] spawnPoints;
@@ -57,14 +57,14 @@ public class SpawnObjects : MonoBehaviour
 
     IEnumerator SpawnObject()
     {
-        Debug.Log("Started");
+        
         SetRandomCooldown();
         SelectSpawnPoint();
         SelectObjectInCategory();
 
 
         yield return new WaitForSecondsRealtime(spawnTime);
-        Debug.Log("waited");
+        
 
         if (selectedSpawnPoint != null && objectToSpawn != null)
         {
@@ -79,7 +79,7 @@ public class SpawnObjects : MonoBehaviour
         objectToSpawn = null;
         RemoveSelectedSpawnPoint();
         coroutine = null;
-        Debug.Log("finished");
+        
     }
 
     public void SetRandomCooldown()
@@ -116,21 +116,21 @@ public class SpawnObjects : MonoBehaviour
     private void SelectCategory()
     {
         int randomNum = Random.Range(1, 4);
-
+        Debug.Log(randomNum);
         switch (randomNum)
         {
             case 1:
-                selectedCategory = "Paper";
+                selectedCategory = 1;
                 break;
             case 2:
-                selectedCategory = "Glass";
+                selectedCategory = 2;
                 break;
             case 3:
-                selectedCategory = "PlasticAndMetal";
+                selectedCategory = 3;
                 break;
         }
 
-        randomNum = -1;
+        //randomNum = -1;
     }
 
     public GameObject SelectObjectInCategory()
@@ -139,24 +139,24 @@ public class SpawnObjects : MonoBehaviour
         int randomIndex;
         switch (selectedCategory)
         {
-            case "Paper":
+            case 1:
                 randomIndex = Random.Range(0, paperObjects.Length );
                 objectToSpawn = paperObjects[randomIndex];
-
+               
                 break;
 
-            case "Glass":
+            case 2:
 
                 randomIndex = Random.Range(0, glassObjects.Length );
                 objectToSpawn = glassObjects[randomIndex];
-
+                
                 break;
 
-            case "PlasticAndMetal":
+            case 3:
 
                 randomIndex = Random.Range(0, plasticAndMetalObjects.Length);
                 objectToSpawn = plasticAndMetalObjects[randomIndex];
-
+                
                 break;
         }
 

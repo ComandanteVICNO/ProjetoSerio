@@ -9,6 +9,12 @@ public class PlasticBinManager : MonoBehaviour
     StopClock stopClock;
     public GameObject pauseCanvas;
 
+    private void Start()
+    {
+        scoreManager = FindFirstObjectByType<ScoreManager>();
+        dragNDrop = FindAnyObjectByType<DragAndDrop>();
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.GetComponent<DragAndDrop>() == null) return;

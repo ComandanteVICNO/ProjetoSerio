@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class DragAndDrop : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class DragAndDrop : MonoBehaviour
 	[SerializeField] private InputAction press, screenPos;
 
     private Vector3 curScreenPos;
-
+    private Transform spriteTransform;
+    private SpriteRenderer objectSprite;
+    
+    Vector3 originalScale;
     Camera camera;
     public bool isDragging;
 
@@ -43,7 +47,15 @@ public class DragAndDrop : MonoBehaviour
         press.performed += _ => { if (isClickedOn) StartCoroutine(Drag()); };
         press.canceled += _ => { isDragging = false; };
 
+        
+
+        objectSprite = GetComponentInChildren<SpriteRenderer>();
+        spriteTransform = objectSprite.transform;
+        originalScale = new Vector3(spriteTransform.localScale.x, spriteTransform.localScale.y, spriteTransform.localScale.z);
+
     }
+
+    
 
     private IEnumerator Drag()
     {
@@ -61,4 +73,18 @@ public class DragAndDrop : MonoBehaviour
         GetComponent<Rigidbody>().useGravity = true;
     }
 
+    
+
+    public void TweenLow(float animationSpeed)
+    {
+        spriteTransform.DOScale(Vector3.zero, animationSpeed);
+    }
+
+    public void TweenHigh(float animationSpeed)
+    {
+        
+       
+        spriteTransform.DOScale(originalScale, animationSpeed);
+    }
+   
 }
