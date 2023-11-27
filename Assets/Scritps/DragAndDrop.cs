@@ -77,14 +77,14 @@ public class DragAndDrop : MonoBehaviour
 
     public void TweenLow(float animationSpeed)
     {
-        spriteTransform.DOScale(Vector3.zero, animationSpeed);
+        spriteTransform.DOScale(Vector3.zero, animationSpeed).SetEase(Ease.Linear);
     }
 
     public void TweenHigh(float animationSpeed)
     {
         
        
-        spriteTransform.DOScale(originalScale, animationSpeed);
+        spriteTransform.DOScale(originalScale, animationSpeed).SetEase(Ease.Linear);
     }
    
 }

@@ -26,6 +26,10 @@ public class SpawnObjects : MonoBehaviour
     public float spawnCheckRadius;
     public float spawnTime;
 
+    [Header("Despawn Objects")]
+    public float minDespawnTime;
+    public float maxDespawnTime;
+
 
     
     private void Start()
@@ -69,7 +73,12 @@ public class SpawnObjects : MonoBehaviour
         if (selectedSpawnPoint != null && objectToSpawn != null)
         {
             if (!IsOccupied(selectedSpawnPoint.position))
-                Instantiate(objectToSpawn, selectedSpawnPoint.position, Quaternion.identity);
+            {
+                
+                GameObject spawnObject = Instantiate(objectToSpawn, selectedSpawnPoint.position, Quaternion.identity);
+                DespawnObject despawnObject = spawnObject.AddComponent<DespawnObject>();
+            }
+
 
         }
 
