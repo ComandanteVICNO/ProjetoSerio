@@ -46,11 +46,11 @@ public class VibrationManager : MonoBehaviour
     {
         isCoroutineRunning = true;
         Vibrate(wrongVibrationTime);
-        Debug.Log("yes");
+        
         yield return new WaitForSecondsRealtime(timeToWait);
         Vibrate(wrongVibrationTime);
         isCoroutineRunning = false;
-        Debug.Log("no");
+        
     }
 
 }
