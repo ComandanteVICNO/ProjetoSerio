@@ -24,19 +24,37 @@ public class ScoreManager : MonoBehaviour
     public float maxTime;
     public float newElapsedTime;
 
+    [Header("Score Values")]
+    int highScore;
+    int score;
+    int failed;
+
     [Header("Bool Checks")]
     public bool isTimerRunning = true;
+    public bool isGameOver;
+    public bool isGamemodeTimed;
+    public bool setTimed;
 
-    int score;
-    int highScore;
     private void Awake()
     {
         highScore = PlayerPrefs.GetInt("HighScore", 0);
+        int gamemode = PlayerPrefs.GetInt("Gamemode", 0);
+        if(gamemode == 0)
+        {
+            isGamemodeTimed = false;
+        }
+        else
+        {
+            isGamemodeTimed = true;
+        }
+        
     }
     private void Start()
     {
         vibrationManager = FindAnyObjectByType<VibrationManager>();
+        isGameOver = false;
         score = 0;
+        failed = 0;
         gameUI.SetActive(true);
         gameOverUI.SetActive(false);
         highScoreText.text = "Highscore: " + highScore; 
@@ -46,9 +64,21 @@ public class ScoreManager : MonoBehaviour
     private void Update()
     {
         scoreText.text = "Score: " + score;
-        ClockCountdown();
+        if (isGamemodeTimed)
+        {
+            ClockCountdown();
+        }
 
-
+        if(setTimed)
+        {
+            PlayerPrefs.SetInt("Gamemode", 1);
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Gamemode", 0);
+            PlayerPrefs.Save();
+        }
     }
     #region ScoreHandling
     public void IncreaseScore()
@@ -60,12 +90,24 @@ public class ScoreManager : MonoBehaviour
     public void DecreaseScore()
     {
         vibrationManager.WrongVibrate();
-        if (score == 0) return;
+        if (isGamemodeTimed)
+        {
+            if (score == 0) return;
+            else
+            {
+                score -= 1;
+            }
+        }
         else
         {
-            
-            score -= 1;
+            failed += 1;
+            if(failed > 3)
+            {
+                GameOverUI();
+            }
+            timerText.text = "Fails: " + failed;
         }
+        
     }
     #endregion
     #region Clock
@@ -107,6 +149,7 @@ public class ScoreManager : MonoBehaviour
     #region UIHandling
     void GameOverUI()
     {
+        isGameOver = true;
         gameUI.SetActive(false);
         gameOverUI.SetActive(true);
         if (score > highScore)

@@ -48,7 +48,7 @@ public class SpawnObjects : MonoBehaviour
 
     void DoSpawnCoroutine()
     {
-        if (scoreManager.newElapsedTime <= 0) return;
+        if (scoreManager.isGameOver) return;
         else
         {
             if (coroutine != null) return;
