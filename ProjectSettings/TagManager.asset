@@ -7,8 +7,9 @@ TagManager:
   - Plastic
   - Paper
   - Metal
-  - Battery
   - Glass
+  - Organic
+  - Electric
   layers:
   - Default
   - TransparentFX

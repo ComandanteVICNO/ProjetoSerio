@@ -12,6 +12,8 @@ public class SpawnObjects : MonoBehaviour
     public GameObject[] paperObjects;
     public GameObject[] glassObjects;
     public GameObject[] plasticAndMetalObjects;
+    public GameObject[] organicObjects;
+    public GameObject[] electricObjects;
     GameObject objectToSpawn;
     private int selectedCategory;
 
@@ -124,7 +126,7 @@ public class SpawnObjects : MonoBehaviour
     #region SpawnObjectSelection
     private void SelectCategory()
     {
-        int randomNum = Random.Range(1, 4);
+        int randomNum = Random.Range(1, 6);
         Debug.Log(randomNum);
         switch (randomNum)
         {
@@ -136,6 +138,12 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 selectedCategory = 3;
+                break;
+            case 4: 
+                selectedCategory = 4;
+                break;
+            case 5:
+                selectedCategory = 5;
                 break;
         }
 
@@ -166,6 +174,17 @@ public class SpawnObjects : MonoBehaviour
                 randomIndex = Random.Range(0, plasticAndMetalObjects.Length);
                 objectToSpawn = plasticAndMetalObjects[randomIndex];
                 
+                break;
+
+            case 4:
+                randomIndex = Random.Range(0, organicObjects.Length);
+                objectToSpawn = organicObjects[randomIndex];
+
+                break;
+            case 5:
+                randomIndex = Random.Range(0, electricObjects.Length);
+                objectToSpawn = electricObjects[randomIndex];
+
                 break;
         }
 
