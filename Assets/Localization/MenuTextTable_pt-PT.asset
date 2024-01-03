@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: pt-PT
   m_SharedData: {fileID: 11400000, guid: 690e40f488adeba4eaa40be9b8564833, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 7416445686775283730
   m_TableData:
   - m_Id: 118615359488
     m_Localized: Queres mesmo sair?
@@ -34,6 +35,31 @@ MonoBehaviour:
     m_Localized: "\xC9 assim que se joga :)"
     m_Metadata:
       m_Items: []
+  - m_Id: 12692195966894080
+    m_Localized: 'Idioma:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12721078216867840
+    m_Localized: "M\xFAsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12721282898903040
+    m_Localized: Efeitos Sonoros
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12733675699879936
+    m_Localized: 'Modo de Jogo:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12734425909870592
+    m_Localized: Temporizador
+    m_Metadata:
+      m_Items:
+      - rid: 7416445686775283730
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 7416445686775283730
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00c0c694e43d2d00

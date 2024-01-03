@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
+    public static ScoreManager instance;
+
     [Header("References")]
     public TMP_Text scoreText;
     public TMP_Text highScoreText;
@@ -15,6 +19,10 @@ public class ScoreManager : MonoBehaviour
     public GameObject gameUI;
     public GameObject gameOverUI;
     public VibrationManager vibrationManager;
+
+    [Header("Gamemode Titles")]
+    public GameObject timedTitle;
+    public GameObject mistakeTitle;
 
     [Header("TimeValues")]
     private float startTime;
@@ -38,46 +46,44 @@ public class ScoreManager : MonoBehaviour
     private void Awake()
     {
         highScore = PlayerPrefs.GetInt("HighScore", 0);
-        int gamemode = PlayerPrefs.GetInt("Gamemode", 0);
-        if(gamemode == 0)
-        {
-            isGamemodeTimed = false;
-        }
-        else
-        {
-            isGamemodeTimed = true;
-        }
+
+        
         
     }
     private void Start()
     {
+        int gamemode = PlayerPrefs.GetInt("GameMode");
+        if (gamemode == 0)
+        {
+            isGamemodeTimed = false;
+            timedTitle.SetActive(false);
+            mistakeTitle.SetActive(true);
+        }
+        else
+        {
+            isGamemodeTimed = true;
+            timedTitle.SetActive(true);
+            mistakeTitle.SetActive(false);
+
+        }
+        Debug.Log("gamemode:" + gamemode);
+        instance = this;
         vibrationManager = FindAnyObjectByType<VibrationManager>();
         isGameOver = false;
         score = 0;
         failed = 0;
         gameUI.SetActive(true);
         gameOverUI.SetActive(false);
-        highScoreText.text = "Highscore: " + highScore; 
+        highScoreText.text = highScore.ToString(); 
 
     }
 
     private void Update()
     {
-        scoreText.text = "Score: " + score;
+        scoreText.text = score.ToString();
         if (isGamemodeTimed)
         {
             ClockCountdown();
-        }
-
-        if(setTimed)
-        {
-            PlayerPrefs.SetInt("Gamemode", 1);
-            PlayerPrefs.Save();
-        }
-        else
-        {
-            PlayerPrefs.SetInt("Gamemode", 0);
-            PlayerPrefs.Save();
         }
     }
     #region ScoreHandling
@@ -105,7 +111,7 @@ public class ScoreManager : MonoBehaviour
             {
                 GameOverUI();
             }
-            timerText.text = "Fails: " + failed;
+            timerText.text = failed.ToString();
         }
         
     }

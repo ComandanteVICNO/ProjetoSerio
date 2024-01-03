@@ -5,6 +5,9 @@ using UnityEngine.Animations;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.Localization;
+using Unity.VisualScripting;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -23,6 +26,10 @@ public class MainMenuManager : MonoBehaviour
     public float soundFxVolume;
     public float musicVolume;
 
+    [Header("Gamemode")]
+    string selectedGamemodePref = "GameMode";
+    public Toggle gamemodeSelector;
+
     private void Awake()
     {
         SetActiveUIOnAwake();
@@ -31,7 +38,7 @@ public class MainMenuManager : MonoBehaviour
     void Start()
     {
         SetSavedSettings();
-        
+        SelectGamemode();
     }
 
     void Update()
@@ -125,4 +132,32 @@ public class MainMenuManager : MonoBehaviour
     }
 
     #endregion
+
+    public void SelectGamemode()
+    {
+        int gamemode = PlayerPrefs.GetInt(selectedGamemodePref);
+        if (gamemode == 0)
+        {
+            gamemodeSelector.isOn = false;
+        }
+        if(gamemode == 1)
+        {
+            gamemodeSelector.isOn = true;
+        }
+    }
+    public void GameType(bool gameType)
+    {
+        if(gameType == true)
+        {
+            PlayerPrefs.SetInt(selectedGamemodePref, 1);
+            PlayerPrefs.Save();
+        }
+        if(gameType == false)
+        {
+            PlayerPrefs.SetInt(selectedGamemodePref, 0);
+            PlayerPrefs.Save();
+        }
+        
+    }
+
 }

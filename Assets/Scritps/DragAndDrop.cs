@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class DragAndDrop : MonoBehaviour
 {
-    
+    DragAndDrop dragAndDrop;
 	[SerializeField] private InputAction press, screenPos;
 
     private Vector3 curScreenPos;
@@ -33,7 +33,11 @@ public class DragAndDrop : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                return hit.transform == transform;
+                if(dragAndDrop != null)
+                {
+
+                    return hit.transform == transform;
+                }
             }
             return false;
         }
@@ -54,8 +58,12 @@ public class DragAndDrop : MonoBehaviour
         originalScale = new Vector3(spriteTransform.localScale.x, spriteTransform.localScale.y, spriteTransform.localScale.z);
 
     }
+    private void Start()
+    {
+        dragAndDrop = GetComponent<DragAndDrop>();
+    }
 
-    
+
 
     private IEnumerator Drag()
     {

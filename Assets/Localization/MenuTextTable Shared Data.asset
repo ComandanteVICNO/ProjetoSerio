@@ -24,11 +24,33 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 500510932992
-    m_Key: Settings Title
+    m_Key: '
+
+'
     m_Metadata:
       m_Items: []
   - m_Id: 2859098095616
     m_Key: Tutorial Explanation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12692195966894080
+    m_Key: 'Language Selector:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12721078216867840
+    m_Key: MusicVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12721282898903040
+    m_Key: SoundFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12733675699879936
+    m_Key: 'Gamemode:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12734425909870592
+    m_Key: Timed
     m_Metadata:
       m_Items: []
   m_Metadata:
