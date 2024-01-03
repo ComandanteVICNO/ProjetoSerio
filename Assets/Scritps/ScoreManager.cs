@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
@@ -37,11 +38,22 @@ public class ScoreManager : MonoBehaviour
     int score;
     int failed;
 
+
     [Header("Bool Checks")]
     public bool isTimerRunning = true;
     public bool isGameOver;
     public bool isGamemodeTimed;
     public bool setTimed;
+
+    [Header("Recycling Tips")]
+    [Multiline]
+    public string[] tipsPT;
+    [Multiline]
+    public string[] tipsEN;
+    public TMP_Text tipsText;
+    public Locale ptLocale;
+    public Locale enLocale;
+
 
     private void Awake()
     {
@@ -165,6 +177,17 @@ public class ScoreManager : MonoBehaviour
         }
         Time.timeScale = 0f;
         
+        if(LocalizationSettings.SelectedLocale = ptLocale)
+        {
+            int randomIndex = UnityEngine.Random.Range(0, tipsPT.Length);
+            tipsText.text = tipsPT[randomIndex];
+        }
+        if(LocalizationSettings.SelectedLocale == enLocale)
+        {
+            int randomIndex = UnityEngine.Random.Range(0, tipsEN.Length);
+            tipsText.text = tipsEN[randomIndex];
+        }
+
 
     }
 
@@ -172,7 +195,7 @@ public class ScoreManager : MonoBehaviour
     {
         
         SceneManager.LoadScene("GameScene");
-        
+        Time.timeScale = 1f;
     }
     #endregion
 }

@@ -446,7 +446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -93.44507, y: -97.387}
+  m_AnchoredPosition: {x: -93.44507, y: -97.38721}
   m_SizeDelta: {x: 186.9002, y: 102.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &108595560
@@ -722,7 +722,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -486.27, y: -97.387}
+  m_AnchoredPosition: {x: -486.27002, y: -97.38721}
   m_SizeDelta: {x: 560.595, y: 102.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &197210296
@@ -1667,6 +1667,7 @@ RectTransform:
   - {fileID: 2146769044}
   - {fileID: 435261386}
   - {fileID: 923258329}
+  - {fileID: 840326885}
   m_Father: {fileID: 997369157}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2105,6 +2106,53 @@ MonoBehaviour:
   isGameOver: 0
   isGamemodeTimed: 0
   setTimed: 0
+  tipsPT:
+  - "Aproveita o lixo org\xE2nico! \nCertos restos de alimentos, como cascas de alimentos
+    podem ser adubos naturais para as plantas de casa!"
+  - "Espalma as embalagens antes de as reciclar sempre que poss\xEDvel! \nEste m\xE9todo
+    permite aos contentores transportarem mais quantidade de lixo de uma s\xF3 vez."
+  - "Sabias que no s\xE9culo XI j\xE1 se fazia a reciclagem? \r\nH\xE1 registos de
+    reciclagem de papel no Jap\xE3o, o primeiro material a ser devidamente reciclado!"
+  - "O vidro come\xE7ou a ser reciclado na Sui\xE7a, em 1884, com um sistema de reciclagem
+    para garrafas!"
+  - "Quando v\xEAs uma embalagem com pl\xE1stico que inclui o famoso s\xEDmbolo rPET,
+    significa que est\xE1s a usar Polietileno Tereftalato.\r\nApesar de ser proveniente
+    do petr\xF3leo bruto \xE9 um material extremamente vers\xE1til e cujas embalagens
+    podem ser facilmente reutiliz\xE1veis."
+  - "Sabias que o primeiro centro de reciclagem de pl\xE1stico s\xF3 foi constru\xEDdo
+    em 1972 nos Estados Unidos? \r\nAntes disso, o pl\xE1stico era visto como uma
+    material para usar e descartar de seguida."
+  - "Sabes o significado dos \"Tr\xEAs R's\"? \r\nReduzir, reciclar e reutilizar!"
+  - "Apesar das embalagens de bebida serem maioritariamente de cart\xE3o, como por
+    exemplo um pacote de leite, devem ir para o ecoponto amarelo pois cont\xEAm outros
+    materiais n\xE3o recicl\xE1veis no ecoponto azul."
+  - "Atualmente, o pa\xEDs que mais recicla no mundo \xE9 a Alemanha, que lidera
+    o ranking desde 2016!"
+  - "Por cada tonelada de papel reciclada, s\xE3o poupadas mais de 15 \xE1rvores!"
+  - "Ao reciclar apenas uma garrafa de vidro, j\xE1 est\xE1s a permitir a poupan\xE7a
+    de energia suficiente para ter uma l\xE2mpada de 100w acesa durante 4 horas!\r\n"
+  - "Se reciclares apenas 5 garrafas de \xE1gua est\xE1s a permitir a poss\xEDvel
+    produ\xE7\xE3o de uma t-shirt XL!"
+  - "Sabias que, em Portugal, existem mais ecopontos do que farm\xE1cias? \r\nPor
+    cada farm\xE1cia existem aproximadamente 17 ecopontos!"
+  - "Em Portugal, cada minuto que passa reciclam-se embalagens com um peso equivalente
+    a 4400 telem\xF3veis!"
+  - "Uma \xFAnica garrafa de pl\xE1stico demora mais de 400 anos a se decompor!"
+  - "Sabias que o vidro demora 1 milh\xE3o de anos a se decompor?"
+  - "Ao reciclar papel, r\xE1sga-lo em pequenos peda\xE7os para ser mais f\xE1cil
+    de reciclar e transportar!"
+  - "Se precisares de reciclar materiais eletr\xF3nicos, pesquisa sobre os fabricantes,
+    h\xE1 chance da empresa aceitar os teus materiais n\xE3o utilizados ou estragados!\r\n"
+  - "Apesar de comum, caixas de cart\xE3o que tenham res\xEDduos como gordura ou
+    sujidade n\xE3o devem ir para o ecoponto azul."
+  - "Sabias que se qusieres reciclar m\xF3veis ou eletrodom\xE9sticos grandes algu\xE9m
+    pode ir busc\xE1-los a tua casa? \r\nContacta a tua freguesia para mais informa\xE7\xE3o!"
+  tipsEN:
+  - hoahpihdawd
+  - dadwdadwawd
+  tipsText: {fileID: 840326886}
+  ptLocale: {fileID: 11400000, guid: ab8c35e4d55d3a94dae50598d2399d8d, type: 2}
+  enLocale: {fileID: 11400000, guid: 3b36259c6c2c9ce45b688278486d6640, type: 2}
 --- !u!4 &706694825
 Transform:
   m_ObjectHideFlags: 0
@@ -2260,6 +2308,140 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0318034295a69b4aa2e988683d0f7da, type: 3}
+--- !u!1 &840326884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 840326885}
+  - component: {fileID: 840326887}
+  - component: {fileID: 840326886}
+  m_Layer: 5
+  m_Name: TipsTitle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &840326885
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840326884}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.15, y: 2.15, z: 2.15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 628568194}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 169.3706}
+  m_SizeDelta: {x: 573.5388, y: 318.1549}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &840326886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840326884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &840326887
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840326884}
+  m_CullTransparentMesh: 1
 --- !u!1 &923258328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,7 +2884,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &997369154
 MonoBehaviour:
   m_ObjectHideFlags: 0
