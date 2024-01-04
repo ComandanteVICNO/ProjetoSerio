@@ -177,7 +177,7 @@ public class ScoreManager : MonoBehaviour
         }
         Time.timeScale = 0f;
         
-        if(LocalizationSettings.SelectedLocale = ptLocale)
+        if(LocalizationSettings.SelectedLocale == ptLocale)
         {
             int randomIndex = UnityEngine.Random.Range(0, tipsPT.Length);
             tipsText.text = tipsPT[randomIndex];

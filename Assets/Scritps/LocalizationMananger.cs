@@ -52,7 +52,15 @@ public class LocalizationMananger : MonoBehaviour
     {
         isActive = true;
         yield return LocalizationSettings.InitializationOperation;
-        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[localID];
+        if(localID == 0)
+        {
+            LocalizationSettings.SelectedLocale = enLocale;
+        }
+        else if(localID == 1)
+        {
+            LocalizationSettings.SelectedLocale = ptLocale;
+        }
+        
         PlayerPrefs.SetInt(LanguagePrefs, localID);
         PlayerPrefs.Save();
         isActive = false;
