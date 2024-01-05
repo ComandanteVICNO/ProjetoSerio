@@ -17,6 +17,7 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text highScoreText;
     public TMP_Text timerText;
     public TMP_Text gameoverScoreText;
+    public TMP_Text gameoverScoreTextValue;
     public GameObject gameUI;
     public GameObject gameOverUI;
     public VibrationManager vibrationManager;
@@ -170,6 +171,7 @@ public class ScoreManager : MonoBehaviour
         isGameOver = true;
         gameUI.SetActive(false);
         gameOverUI.SetActive(true);
+        gameoverScoreTextValue.text = score.ToString();
         if (score > highScore)
         {
             PlayerPrefs.SetInt("HighScore", score);
@@ -197,5 +199,11 @@ public class ScoreManager : MonoBehaviour
         SceneManager.LoadScene("GameScene");
         Time.timeScale = 1f;
     }
+
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     #endregion
 }
