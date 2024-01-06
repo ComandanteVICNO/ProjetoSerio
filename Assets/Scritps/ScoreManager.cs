@@ -203,6 +203,7 @@ public class ScoreManager : MonoBehaviour
     public void MainMenuButton()
     {
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
     }
 
     #endregion
