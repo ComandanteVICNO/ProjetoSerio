@@ -47,6 +47,7 @@ public class ScoreManager : MonoBehaviour
     public bool isGameOver;
     public bool isGamemodeTimed;
     public bool setTimed;
+    public bool wasTipShown;
 
     [Header("Recycling Tips")]
     [Multiline]
@@ -94,7 +95,7 @@ public class ScoreManager : MonoBehaviour
         gameUI.SetActive(true);
         gameOverUI.SetActive(false);
         highScoreText.text = highScore.ToString(); 
-
+        wasTipShown = false;
     }
 
     private void Update()
@@ -186,7 +187,9 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.Save();
         }
         Time.timeScale = 0f;
-        
+
+        if (wasTipShown) return;
+
         if(LocalizationSettings.SelectedLocale == ptLocale)
         {
             int randomIndex = UnityEngine.Random.Range(0, tipsPT.Length);
@@ -198,7 +201,7 @@ public class ScoreManager : MonoBehaviour
             tipsText.text = tipsEN[randomIndex];
         }
 
-
+        wasTipShown = true;
     }
 
     public void RestartGame()
