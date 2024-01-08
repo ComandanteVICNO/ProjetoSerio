@@ -22,6 +22,8 @@ public class ScoreManager : MonoBehaviour
     public GameObject gameOverUI;
     public VibrationManager vibrationManager;
 
+
+
     [Header("Gamemode Titles")]
     public GameObject timedTitle;
     public GameObject mistakeTitle;
@@ -54,6 +56,10 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text tipsText;
     public Locale ptLocale;
     public Locale enLocale;
+
+    [Header("Audio")]
+    public AudioSource itemDropAudioSource;
+    public AudioClip itemDropClip;
 
 
     private void Awake()
@@ -104,6 +110,8 @@ public class ScoreManager : MonoBehaviour
     {
         score += 1;
         vibrationManager.Vibrate(vibrationManager.correctVibrationTime);
+
+        PlayAudio();
     }
 
     public void DecreaseScore()
@@ -171,7 +179,7 @@ public class ScoreManager : MonoBehaviour
         isGameOver = true;
         gameUI.SetActive(false);
         gameOverUI.SetActive(true);
-        gameoverScoreTextValue.text = score.ToString();
+        gameoverScoreTextValue.text = "" + score;
         if (score > highScore)
         {
             PlayerPrefs.SetInt("HighScore", score);
@@ -207,4 +215,12 @@ public class ScoreManager : MonoBehaviour
     }
 
     #endregion
+
+
+    public void PlayAudio()
+    {
+        itemDropAudioSource.pitch = UnityEngine.Random.Range(0.8f, 1.3f);
+
+        itemDropAudioSource.PlayOneShot(itemDropClip);
+    }
 }

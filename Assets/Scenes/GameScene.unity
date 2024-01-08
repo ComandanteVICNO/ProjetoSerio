@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4440221, g: 0.49316514, b: 0.5722316, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1352,6 +1352,52 @@ Transform:
   - {fileID: 997369157}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &328391550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 328391551}
+  - component: {fileID: 328391552}
+  m_Layer: 0
+  m_Name: PickupSoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &328391551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328391550}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1102332507}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &328391552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328391550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff0da24494cad74f95bff2060baf911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupClip: {fileID: 8300000, guid: 6bd4c1b5579c21948b34e06daddfde5a, type: 3}
+  audioSource: {fileID: 1744850289}
 --- !u!1 &358746145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,7 +1482,7 @@ MonoBehaviour:
   - {fileID: 1377318512}
   selectedSpawnPoint: {fileID: 0}
   minSpawnTime: 1
-  maxSpawnTime: 4
+  maxSpawnTime: 3
   spawnCheckRadius: 0.5
   spawnTime: 0
   minDespawnTime: 5
@@ -1853,6 +1899,18 @@ PrefabInstance:
     - target: {fileID: 6371003023414611124, guid: 2d5ec8259966cef49858272bc2ce696b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717549027214182131, guid: 2d5ec8259966cef49858272bc2ce696b, type: 3}
+      propertyPath: particleColor.b
+      value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717549027214182131, guid: 2d5ec8259966cef49858272bc2ce696b, type: 3}
+      propertyPath: particleColor.g
+      value: 0.24334186
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717549027214182131, guid: 2d5ec8259966cef49858272bc2ce696b, type: 3}
+      propertyPath: particleColor.r
+      value: 0.22352941
       objectReference: {fileID: 0}
     - target: {fileID: 8754260251436148504, guid: 2d5ec8259966cef49858272bc2ce696b, type: 3}
       propertyPath: animationSpeed
@@ -2348,6 +2406,8 @@ MonoBehaviour:
   tipsText: {fileID: 840326886}
   ptLocale: {fileID: 11400000, guid: ab8c35e4d55d3a94dae50598d2399d8d, type: 2}
   enLocale: {fileID: 11400000, guid: 3b36259c6c2c9ce45b688278486d6640, type: 2}
+  itemDropAudioSource: {fileID: 1744850289}
+  itemDropClip: {fileID: 8300000, guid: 06af709117aa0eb4e956f5d516f0c9ba, type: 3}
 --- !u!4 &706694825
 Transform:
   m_ObjectHideFlags: 0
@@ -3331,6 +3391,7 @@ Transform:
   - {fileID: 706694825}
   - {fileID: 358746146}
   - {fileID: 292036485}
+  - {fileID: 328391551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1136042909
@@ -5176,6 +5237,134 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704209237}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1744850288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1744850290}
+  - component: {fileID: 1744850289}
+  m_Layer: 0
+  m_Name: ItemAudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1744850289
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744850288}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6247677733317353784, guid: c0430ad11c036434db34196b32a712e3, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1744850290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744850288}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -5.94, y: 1, z: 2.579}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1808934944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5762,6 +5951,18 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7799320917502232427, guid: 2966c4bcced3dc74980cea946335b954, type: 3}
+      propertyPath: particleColor.b
+      value: 0.09371662
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799320917502232427, guid: 2966c4bcced3dc74980cea946335b954, type: 3}
+      propertyPath: particleColor.g
+      value: 0.100491405
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799320917502232427, guid: 2966c4bcced3dc74980cea946335b954, type: 3}
+      propertyPath: particleColor.r
+      value: 0.735849
+      objectReference: {fileID: 0}
     - target: {fileID: 8062734296824850552, guid: 2966c4bcced3dc74980cea946335b954, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -5822,6 +6023,18 @@ PrefabInstance:
     - target: {fileID: 2858531090443296801, guid: ec57537a00b288542a7dca661a2811a8, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239773181847659347, guid: ec57537a00b288542a7dca661a2811a8, type: 3}
+      propertyPath: particleColor.b
+      value: 0.10588234
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239773181847659347, guid: ec57537a00b288542a7dca661a2811a8, type: 3}
+      propertyPath: particleColor.g
+      value: 0.38365316
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239773181847659347, guid: ec57537a00b288542a7dca661a2811a8, type: 3}
+      propertyPath: particleColor.r
+      value: 0.7490196
       objectReference: {fileID: 0}
     - target: {fileID: 4725745750661025321, guid: ec57537a00b288542a7dca661a2811a8, type: 3}
       propertyPath: m_Name
@@ -5893,6 +6106,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2460163838355575068, guid: 4d8645e28478eb34f876d1e82c49b6a1, type: 3}
+      propertyPath: particleColor.b
+      value: 0.038032193
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460163838355575068, guid: 4d8645e28478eb34f876d1e82c49b6a1, type: 3}
+      propertyPath: particleColor.g
+      value: 0.7264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460163838355575068, guid: 4d8645e28478eb34f876d1e82c49b6a1, type: 3}
+      propertyPath: particleColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460163838355575068, guid: 4d8645e28478eb34f876d1e82c49b6a1, type: 3}
+      propertyPath: particleMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6070ed99f4a9e1942b19ca616766b17e, type: 2}
+    - target: {fileID: 2460163838355575068, guid: 4d8645e28478eb34f876d1e82c49b6a1, type: 3}
+      propertyPath: particleEmissionMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 934567ea372bb164c880f2ee1af22e9b, type: 2}
     - target: {fileID: 4110996162565434731, guid: 4d8645e28478eb34f876d1e82c49b6a1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -6030,6 +6263,18 @@ PrefabInstance:
       propertyPath: animationSpeed
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 7146956660412249546, guid: 5ff41838a21195747a8d23f4ab8e23b8, type: 3}
+      propertyPath: particleColor.b
+      value: 0.0041384934
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146956660412249546, guid: 5ff41838a21195747a8d23f4ab8e23b8, type: 3}
+      propertyPath: particleColor.g
+      value: 0.8146192
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146956660412249546, guid: 5ff41838a21195747a8d23f4ab8e23b8, type: 3}
+      propertyPath: particleColor.r
+      value: 0.8773585
+      objectReference: {fileID: 0}
     - target: {fileID: 7272950110623925534, guid: 5ff41838a21195747a8d23f4ab8e23b8, type: 3}
       propertyPath: m_Name
       value: EcoPontoAmarelo
@@ -6068,3 +6313,4 @@ SceneRoots:
   - {fileID: 32146748}
   - {fileID: 669338892}
   - {fileID: 787740522}
+  - {fileID: 1744850290}

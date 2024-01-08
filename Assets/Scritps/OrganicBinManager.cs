@@ -6,10 +6,21 @@ public class OrganicBinManager : MonoBehaviour
 {
     public ScoreManager scoreManager;
     public DragAndDrop dragNDrop;
+    public GameObject particleEffect;
+    public Transform particleSource;
+
+    
+    public Material particleMaterial;
+    public Material particleEmissionMaterial;
+
+    public Color particleColor = new Color(132, 63, 18, 255);
+    public float emissionIntensity;
+
     private void Start()
     {
         scoreManager = FindFirstObjectByType<ScoreManager>();
         dragNDrop = FindAnyObjectByType<DragAndDrop>();
+        
     }
 
     private void OnTriggerStay(Collider other)
@@ -24,6 +35,7 @@ public class OrganicBinManager : MonoBehaviour
             {
                 scoreManager.IncreaseScore();
                 Object.Destroy(other.gameObject);
+                SpawnParticles();
             }
             else
             {
@@ -36,5 +48,16 @@ public class OrganicBinManager : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         dragNDrop = null;   
+    }
+
+
+    public void SpawnParticles()
+    {
+
+        particleMaterial.color = particleColor;
+        particleEmissionMaterial.SetColor("_EmissionColor", particleColor);
+
+        GameObject particlesObject = Instantiate(particleEffect, particleSource);
+
     }
 }

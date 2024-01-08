@@ -377,6 +377,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5382392350564030522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3146161881643427783}
+  m_Layer: 0
+  m_Name: ParticleSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3146161881643427783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5382392350564030522}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.81, z: -0.187}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3953359344243493411}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7272950110623925534
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +447,7 @@ Transform:
   - {fileID: 2654735576906207535}
   - {fileID: 1313229239682497522}
   - {fileID: 2256370367563202814}
+  - {fileID: 3146161881643427783}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!135 &2758898262135094008
@@ -489,7 +521,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 0}
   dragNDrop: {fileID: 0}
-  pauseCanvas: {fileID: 0}
+  particleEffect: {fileID: 8379304330077330127, guid: e9500c6304813b94eb3beb695023177c, type: 3}
+  particleSource: {fileID: 3146161881643427783}
+  particleMaterial: {fileID: 2100000, guid: 6070ed99f4a9e1942b19ca616766b17e, type: 2}
+  particleEmissionMaterial: {fileID: 2100000, guid: 934567ea372bb164c880f2ee1af22e9b, type: 2}
+  particleColor: {r: 42, g: 48, b: 142, a: 255}
+  emissionIntensity: 1
 --- !u!114 &4983351793174315309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,4 +554,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openSound: {fileID: 8300000, guid: 96ec614183a61ff4390595beece68fc9, type: 3}
   closeSound: {fileID: 8300000, guid: cfd940cac053dab49b24bd164970674e, type: 3}
-  AudioSource: {fileID: 0}
+  audioSource: {fileID: 0}

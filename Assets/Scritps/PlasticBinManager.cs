@@ -6,7 +6,14 @@ public class PlasticBinManager : MonoBehaviour
 {
     public ScoreManager scoreManager;
     public DragAndDrop dragNDrop;
-    public GameObject pauseCanvas;
+    public GameObject particleEffect;
+    public Transform particleSource;
+
+    public Material particleMaterial;
+    public Material particleEmissionMaterial;
+
+    public Color particleColor = new Color(231, 204, 39, 255);
+    public float emissionIntensity;
 
     private void Start()
     {
@@ -27,6 +34,7 @@ public class PlasticBinManager : MonoBehaviour
             {
                 scoreManager.IncreaseScore();
                 Object.Destroy(other.gameObject);
+                SpawnParticles();
             }
             else
             {
@@ -43,5 +51,13 @@ public class PlasticBinManager : MonoBehaviour
         
     }
 
-    
+    public void SpawnParticles()
+    {
+
+        particleMaterial.color = particleColor;
+        particleEmissionMaterial.SetColor("_EmissionColor", particleColor);
+
+        GameObject particlesObject = Instantiate(particleEffect, particleSource);
+
+    }
 }

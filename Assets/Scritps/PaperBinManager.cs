@@ -6,6 +6,16 @@ public class PaperBinManager : MonoBehaviour
 {
     public ScoreManager scoreManager;
     public DragAndDrop dragNDrop;
+    public GameObject particleEffect;
+    public Transform particleSource;
+
+    
+    public Material particleMaterial;
+    public Material particleEmissionMaterial;
+
+    public Color particleColor = new Color(42, 48, 142, 255);
+    public float emissionIntensity;
+
     private void Start()
     {
         scoreManager = FindFirstObjectByType<ScoreManager>();
@@ -24,6 +34,7 @@ public class PaperBinManager : MonoBehaviour
             {
                 scoreManager.IncreaseScore();
                 Object.Destroy(other.gameObject);
+                SpawnParticles();
             }
             else
             {
@@ -36,5 +47,16 @@ public class PaperBinManager : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         dragNDrop = null;   
+    }
+
+
+    public void SpawnParticles()
+    {
+
+        particleMaterial.color = particleColor;
+        particleEmissionMaterial.SetColor("_EmissionColor", particleColor);
+
+        GameObject particlesObject = Instantiate(particleEffect, particleSource);
+
     }
 }

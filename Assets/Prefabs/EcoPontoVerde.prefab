@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &203772327546641473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5075142427745816353}
+  m_Layer: 0
+  m_Name: ParticleSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5075142427745816353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203772327546641473}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.03, y: 0.8, z: -0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5117117551829920698}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4110996162565434731
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +364,7 @@ Transform:
   - {fileID: 5767504815254566492}
   - {fileID: 4558662210731889678}
   - {fileID: 404025369551818881}
+  - {fileID: 5075142427745816353}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!135 &3920424952625230948
@@ -406,6 +438,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 0}
   dragNDrop: {fileID: 0}
+  particleEffect: {fileID: 8379304330077330127, guid: e9500c6304813b94eb3beb695023177c, type: 3}
+  particleSource: {fileID: 5075142427745816353}
+  particleMaterial: {fileID: 2100000, guid: 6070ed99f4a9e1942b19ca616766b17e, type: 2}
+  particleEmissionMaterial: {fileID: 2100000, guid: 934567ea372bb164c880f2ee1af22e9b, type: 2}
+  particleColor: {r: 0, g: 101, b: 5, a: 255}
+  emissionIntensity: 1
 --- !u!114 &4622426281777800861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,7 +471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openSound: {fileID: 8300000, guid: 96ec614183a61ff4390595beece68fc9, type: 3}
   closeSound: {fileID: 8300000, guid: cfd940cac053dab49b24bd164970674e, type: 3}
-  AudioSource: {fileID: 5727194133971238408}
+  audioSource: {fileID: 0}
 --- !u!1 &7881309606560931605
 GameObject:
   m_ObjectHideFlags: 0

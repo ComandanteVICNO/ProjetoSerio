@@ -6,6 +6,8 @@ using DG.Tweening;
 
 public class DragAndDrop : MonoBehaviour
 {
+    public static DragAndDrop instance;
+
     DragAndDrop dragAndDrop;
 	[SerializeField] private InputAction press, screenPos;
 
@@ -63,6 +65,18 @@ public class DragAndDrop : MonoBehaviour
         dragAndDrop = GetComponent<DragAndDrop>();
     }
 
+    private void Update()
+    {
+        if (isDragging)
+        {
+            instance = this;
+        }
+
+        if(!isDragging)
+        {
+            instance = null;
+        }
+    }
 
 
     private IEnumerator Drag()
