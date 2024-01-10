@@ -43,6 +43,14 @@ MonoBehaviour:
     m_Key: BackButton
     m_Metadata:
       m_Items: []
+  - m_Id: 14910507312398336
+    m_Key: FactsButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14914834772967424
+    m_Key: NewFactButton
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
