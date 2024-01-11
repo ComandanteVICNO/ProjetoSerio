@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 275696238592
-    m_Localized: "Quit\t"
+    m_Localized: Quit
     m_Metadata:
       m_Items: []
   - m_Id: 12605679124480
@@ -44,6 +44,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 19804358885376
     m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14910507312398336
+    m_Localized: Learn More
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14914834772967424
+    m_Localized: New Fact
     m_Metadata:
       m_Items: []
   references:

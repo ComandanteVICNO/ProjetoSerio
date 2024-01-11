@@ -30,6 +30,10 @@ public class MainMenuManager : MonoBehaviour
     string selectedGamemodePref = "GameMode";
     public Toggle gamemodeSelector;
 
+    [Header("Sound")]
+    public AudioClip buttonSound;
+    public AudioSource buttonAudioSource;
+
     private void Awake()
     {
         SetActiveUIOnAwake();
@@ -39,6 +43,9 @@ public class MainMenuManager : MonoBehaviour
     {
         SetSavedSettings();
         SelectGamemode();
+
+        StartCoroutine(ReloadMainMenu());
+
     }
 
     void Update()
@@ -51,6 +58,13 @@ public class MainMenuManager : MonoBehaviour
                 return;
             }
         }
+    }
+
+    IEnumerator ReloadMainMenu()
+    {
+        mainMenu.SetActive(false);
+        yield return new WaitForSecondsRealtime(0.01f);
+        mainMenu.SetActive(true);
     }
 
     public void SetActiveUIOnAwake()
@@ -158,6 +172,13 @@ public class MainMenuManager : MonoBehaviour
             PlayerPrefs.Save();
         }
         
+    }
+
+    public void ButtonSound()
+    {
+        float randomPitch = UnityEngine.Random.Range(0.8f,1.2f);
+        buttonAudioSource.pitch = randomPitch;
+        buttonAudioSource.PlayOneShot(buttonSound);
     }
 
 }

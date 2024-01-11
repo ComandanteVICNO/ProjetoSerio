@@ -46,6 +46,14 @@ MonoBehaviour:
     m_Localized: Voltar
     m_Metadata:
       m_Items: []
+  - m_Id: 14910507312398336
+    m_Localized: Aprender Mais
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14914834772967424
+    m_Localized: Novo Facto
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

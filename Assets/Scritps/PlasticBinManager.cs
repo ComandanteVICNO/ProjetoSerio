@@ -15,6 +15,7 @@ public class PlasticBinManager : MonoBehaviour
     public Color particleColor = new Color(231, 204, 39, 255);
     public float emissionIntensity;
 
+
     private void Start()
     {
         scoreManager = FindFirstObjectByType<ScoreManager>();
@@ -40,6 +41,7 @@ public class PlasticBinManager : MonoBehaviour
             {
                 scoreManager.DecreaseScore();
                 Object.Destroy(other.gameObject);
+                SpawnSadParticles();
             }
         }
     }
@@ -56,6 +58,18 @@ public class PlasticBinManager : MonoBehaviour
 
         particleMaterial.color = particleColor;
         particleEmissionMaterial.SetColor("_EmissionColor", particleColor);
+        particleEmissionMaterial.color = particleColor;
+        GameObject particlesObject = Instantiate(particleEffect, particleSource);
+
+    }
+    public void SpawnSadParticles()
+    {
+        Color sadParticleColor = new Color(0, 0, 0, 255);
+        Color sadEmissionColor = new Color(0, 0, 0, 255);
+
+        particleMaterial.color = sadParticleColor;
+        particleEmissionMaterial.SetColor("_EmissionColor", sadEmissionColor);
+        particleEmissionMaterial.color = sadEmissionColor;
 
         GameObject particlesObject = Instantiate(particleEffect, particleSource);
 

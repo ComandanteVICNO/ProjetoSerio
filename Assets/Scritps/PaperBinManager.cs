@@ -40,6 +40,7 @@ public class PaperBinManager : MonoBehaviour
             {
                 scoreManager.DecreaseScore();
                 Object.Destroy(other.gameObject);
+                SpawnSadParticles();
             }
         }
     }
@@ -55,8 +56,22 @@ public class PaperBinManager : MonoBehaviour
 
         particleMaterial.color = particleColor;
         particleEmissionMaterial.SetColor("_EmissionColor", particleColor);
+        particleEmissionMaterial.color = particleColor;
+        GameObject particlesObject = Instantiate(particleEffect, particleSource);
+
+    }
+
+    public void SpawnSadParticles()
+    {
+        Color sadParticleColor = new Color(25, 25, 25, 255);
+        Color sadEmissionColor = new Color(0, 0, 0, 255);
+
+        particleMaterial.color = sadParticleColor;
+        particleEmissionMaterial.SetColor("_EmissionColor", sadEmissionColor);
+        particleEmissionMaterial.color = sadEmissionColor;
 
         GameObject particlesObject = Instantiate(particleEffect, particleSource);
 
     }
+
 }
