@@ -2,8 +2,6 @@ using DG.Tweening;
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Build.Pipeline;
 using UnityEngine;
 
 public class MascotAnimation : MonoBehaviour
@@ -11,7 +9,8 @@ public class MascotAnimation : MonoBehaviour
 
     public RectTransform backImage;
     public RectTransform eyeImage;
-    public GameObject tutorialUI;
+    public RectTransform backRefPoint;
+    public RectTransform eyeRefPoint;
 
     public float rotationSpeed;
     public float floatSpeed;
@@ -27,7 +26,7 @@ public class MascotAnimation : MonoBehaviour
     bool canAnimate = true;
     bool wasTimeSelected = false;
     bool wasActivated = false;
-    bool animationStarted = false;
+
     [Header("TweenAnimation")]
     public float transitionTime;
 
@@ -44,8 +43,10 @@ public class MascotAnimation : MonoBehaviour
     public Ease animationEase;
     private void Start()
     {
-        
-        
+
+        CheckPositions();
+
+        FloatUp(1, firstEase);
     }
     // Update is called once per frame
     void Update()
@@ -53,36 +54,24 @@ public class MascotAnimation : MonoBehaviour
         OutAnimation();
         
         HandleAnimation();
-        CheckForEnable();
-        StartAnimation();
+        CheckPositions();
 
 
 
     }
-
-    public void CheckForEnable()
-    {
-        if (!wasActivated) return;
-        if (!tutorialUI.activeSelf) return;
-        wasActivated = true;
-    }
-
-    public void StartAnimation()
-    {
-        if (animationStarted) return;
-        backPositionUp = new Vector2(backImage.position.x, backImage.position.y + yDerivation);
-        backPositionDown = new Vector2(backImage.position.x, backImage.position.y - yDerivation);
-
-
-        eyePositionUp = new Vector2(eyeImage.position.x, eyeImage.position.y + yDerivation);
-        eyePositionDown = new Vector2(eyeImage.position.x, eyeImage.position.y - yDerivation);
-        
-        animationStarted = true;
-
-        FloatUp(1, firstEase);
-    }
-
     //tween
+
+    public void CheckPositions()
+    {
+        
+
+        backPositionUp = new Vector2(backRefPoint.position.x, backRefPoint.position.y + yDerivation);
+        backPositionDown = new Vector2(backRefPoint.position.x, backRefPoint.position.y - yDerivation);
+
+
+        eyePositionUp = new Vector2(eyeRefPoint.position.x, eyeRefPoint.position.y + yDerivation);
+        eyePositionDown = new Vector2(eyeRefPoint.position.x, eyeRefPoint.position.y - yDerivation);
+    }
 
     public void FloatUp(int multy, Ease ease)
     {
@@ -135,6 +124,5 @@ public class MascotAnimation : MonoBehaviour
         canAnimate = true;
         wasTimeSelected = false;
     }
-
 
 }

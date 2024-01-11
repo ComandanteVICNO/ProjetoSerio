@@ -213,8 +213,14 @@ public class ScoreManager : MonoBehaviour
 
     public void MainMenuButton()
     {
-        SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1f;
+        
+        if (score > highScore)
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            PlayerPrefs.Save();
+        }
+        SceneManager.LoadScene("MainMenu");
     }
 
     #endregion
