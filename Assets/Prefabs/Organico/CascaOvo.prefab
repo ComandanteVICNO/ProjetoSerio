@@ -171,6 +171,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: Casca de Ovo
+  enName: Egg Shell
 --- !u!54 &193570342777667700
 Rigidbody:
   m_ObjectHideFlags: 0

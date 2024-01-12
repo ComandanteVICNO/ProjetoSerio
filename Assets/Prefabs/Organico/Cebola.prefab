@@ -255,6 +255,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: Cebola
+  enName: Onion
 --- !u!54 &5366680368710394143
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -51,6 +51,10 @@ MonoBehaviour:
     m_Key: NewFactButton
     m_Metadata:
       m_Items: []
+  - m_Id: 16055935378571264
+    m_Key: Credits Button
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

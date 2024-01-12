@@ -255,6 +255,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: Lata de Metal
+  enName: Metal Can
 --- !u!54 &3001002049651251071
 Rigidbody:
   m_ObjectHideFlags: 0

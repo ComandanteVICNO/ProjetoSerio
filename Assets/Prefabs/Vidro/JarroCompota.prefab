@@ -255,6 +255,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: Jarro de Compota
+  enName: Jam Jar
 --- !u!54 &9208995896150965515
 Rigidbody:
   m_ObjectHideFlags: 0

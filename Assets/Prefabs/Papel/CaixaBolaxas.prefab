@@ -171,6 +171,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: Caixa de Bolachas
+  enName: Cookie Box
 --- !u!54 &4535245346734311236
 Rigidbody:
   m_ObjectHideFlags: 0

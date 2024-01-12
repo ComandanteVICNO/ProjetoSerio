@@ -48,6 +48,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pt-PT
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d61431bb6f53a741a76e9fea5973ffc
+    m_Address: CreditsTable_pt-PT
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-PT
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 21d7ee17c8ed5bc458d70af08c040fad, type: 2}
   m_SchemaSet:

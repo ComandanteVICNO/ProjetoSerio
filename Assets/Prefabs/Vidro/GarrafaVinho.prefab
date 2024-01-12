@@ -171,6 +171,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: Garrafa de Vinho
+  enName: Wine Bottle
 --- !u!54 &965206290424613143
 Rigidbody:
   m_ObjectHideFlags: 0

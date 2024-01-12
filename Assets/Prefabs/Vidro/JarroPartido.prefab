@@ -171,6 +171,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: Jarro Partido
+  enName: Broken Jar
 --- !u!54 &6217433625130627940
 Rigidbody:
   m_ObjectHideFlags: 0

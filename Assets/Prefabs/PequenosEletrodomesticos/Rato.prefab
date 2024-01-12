@@ -255,6 +255,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: Rato
+  enName: Mouse
 --- !u!54 &2557566049653423092
 Rigidbody:
   m_ObjectHideFlags: 0

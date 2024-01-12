@@ -255,6 +255,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: Jornal
+  enName: Newspaper
 --- !u!54 &8117200587702342892
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -171,6 +171,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: "Telem\xF3vel"
+  enName: Mobile Phone
 --- !u!54 &4520477760110288566
 Rigidbody:
   m_ObjectHideFlags: 0

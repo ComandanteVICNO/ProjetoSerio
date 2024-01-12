@@ -54,6 +54,10 @@ MonoBehaviour:
     m_Localized: New Fact
     m_Metadata:
       m_Items: []
+  - m_Id: 16055935378571264
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

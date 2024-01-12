@@ -171,6 +171,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: Livro
+  enName: Book
 --- !u!54 &8820932646725083631
 Rigidbody:
   m_ObjectHideFlags: 0

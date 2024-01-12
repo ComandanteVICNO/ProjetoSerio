@@ -255,6 +255,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: Saco de Papel
+  enName: Paper Bag
 --- !u!54 &6063193310935646943
 Rigidbody:
   m_ObjectHideFlags: 0

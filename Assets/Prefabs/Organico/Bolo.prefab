@@ -255,6 +255,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: Bolo
+  enName: Cake
 --- !u!54 &201280404049450565
 Rigidbody:
   m_ObjectHideFlags: 0

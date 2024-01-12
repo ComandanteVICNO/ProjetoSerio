@@ -171,6 +171,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: Lata de Atum
+  enName: Tuna Can
 --- !u!54 &8894598208009358047
 Rigidbody:
   m_ObjectHideFlags: 0

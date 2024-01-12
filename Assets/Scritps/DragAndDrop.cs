@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
+using UnityEngine.Localization;
 
 public class DragAndDrop : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class DragAndDrop : MonoBehaviour
     Vector3 originalScale;
     Camera camera;
     public bool isDragging;
+
+    
+
+    public string ptName;
+    public string enName;
 
     private Vector3 WorldPos
     {
@@ -70,6 +76,7 @@ public class DragAndDrop : MonoBehaviour
         if (isDragging)
         {
             instance = this;
+            ObjectNameManager.instance.SetText(ptName, enName);
         }
 
         if(!isDragging)

@@ -171,6 +171,8 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   isDragging: 0
+  ptName: Pacote de Plastico
+  enName: Plastic Package
 --- !u!54 &3205043020372093568
 Rigidbody:
   m_ObjectHideFlags: 0
